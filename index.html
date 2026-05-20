@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=no"
+  />
+  <title>AI Office AR</title>
+  <link rel="stylesheet" href="./styles.css" />
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
+      "mindar-image-three": "https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-three.prod.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <main class="shell">
+    <section class="stage" aria-live="polite">
+      <div id="ar-container"></div>
+
+      <div id="statusOverlay" class="status show">
+        <div class="status-content">
+          <div class="loader" id="loader"></div>
+          <p id="statusText">Initializing...</p>
+          <button class="tap-start" id="tapStart" style="display:none;">START</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <script>
+    window.onerror = function(msg, url, line, col, error) {
+      var statusText = document.getElementById('statusText');
+      var loader = document.getElementById('loader');
+      if (statusText) {
+        statusText.innerHTML = '<strong>Error:</strong> ' + (msg || 'Failed to load. Try updating your browser.');
+        if (loader) loader.style.display = 'none';
+      }
+      return false;
+    };
+    
+    if (!('importmap' in HTMLScriptElement.prototype || document.querySelector('script[type="importmap"]'))) {
+      var statusText = document.getElementById('statusText');
+      if (statusText) {
+        statusText.innerHTML = '<strong>Browser not supported.</strong><br>Please use Chrome 89+, Safari 16.4+, or Firefox 108+.';
+        document.getElementById('loader').style.display = 'none';
+      }
+    }
+  </script>
+  <script type="module" src="./mindar-sp.js" onerror="document.getElementById('statusText').innerHTML='Failed to load AR module.'"></script>
+</body>
+</html>
