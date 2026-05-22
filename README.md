@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo.png" alt="arspace teaser" width="600" />
+  <img src="logo.png" alt="arspace teaser"/>
 </p>
 
 # arspace 
