@@ -18,21 +18,15 @@ Existing augmented reality (AR) solutions often require users to download specia
 
 
 <p align="center">
-  <img src="assets/demo/scanning.jpg" alt="Scanning poster with phones" width="200"/>
+  <img src="assets/demo/scanning.jpg" alt="Scanning poster with phones" width="300"/>
   &nbsp;&nbsp;&nbsp;
-  <img src="assets/demo/conference.jpg" alt="AR poster at conference" width="200"/>
+  <img src="assets/demo/conference.jpg" alt="AR poster at conference" width="300"/>
   &nbsp;&nbsp;&nbsp;
-  <img src="assets/demo/video.mp4" alt="AR poster at conference" width="200"/>
+  <img src="assets/demo/video.gif" alt="AR poster at conference" width="300"/>
 </p>
 
 <p align="center">
   <em>arspace in action at a conference — visitors scan the poster to see animated content</em>
-</p>
-
-<p align="center">
-  <a href="assets/demo/demo-video.mp4">
-    <strong>▶️ Watch demo video</strong>
-  </a>
 </p>
 
 ---
