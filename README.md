@@ -14,8 +14,28 @@
 
 ---
 
-Existing augmented reality (AR) solutions often require users to download special apps, which creates friction. This project runs entirely in the browser using WebAR technology, making it more easy to view your augmented posters by simply visiting a URL.
+Existing augmented reality (AR) solutions often require users to download special apps, which creates friction. This project runs entirely in the browser using WebAR technology, making it easy to view your augmented posters by simply visiting a URL.
 
+
+<p align="center">
+  <img src="assets/demo/scanning.jpg" alt="Scanning poster with phones" width="200"/>
+  &nbsp;&nbsp;&nbsp;
+  <img src="assets/demo/conference.jpg" alt="AR poster at conference" width="200"/>
+  &nbsp;&nbsp;&nbsp;
+  <img src="assets/demo/video.mp4" alt="AR poster at conference" width="200"/>
+</p>
+
+<p align="center">
+  <em>arspace in action at a conference — visitors scan the poster to see animated content</em>
+</p>
+
+<p align="center">
+  <a href="assets/demo/demo-video.mp4">
+    <strong>▶️ Watch demo video</strong>
+  </a>
+</p>
+
+---
 
 ## Quick Start
 
@@ -36,6 +56,7 @@ arspace/
 │   └── app.js              # AR application logic
 ├── assets/
 │   ├── logo.png            # Project logo
+│   ├── demo/               # Demo images and video
 │   ├── targets/
 │   │   └── targets.mind    # Compiled AR target data
 │   └── media/              # Videos and reference images
