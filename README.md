@@ -2,15 +2,12 @@
   <img src="assets/logo.png" alt="arspace"/>
 </p>
 
-<h1 align="center">arspace</h1>
-
 <p align="center">
   Turn static posters into interactive AR experiences with video overlays. The project works directly in the browser.
 </p>
 
 <p align="center">
   <a href="#quick-start">Quick Start</a> •
-  <a href="#how-it-works">How It Works</a> •
   <a href="#customization">Customization</a> •
   <a href="#deployment">Deployment</a>
 </p>
