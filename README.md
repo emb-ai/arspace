@@ -18,11 +18,11 @@ Existing augmented reality (AR) solutions often require users to download specia
 
 
 <p align="center">
-  <img src="assets/demo/scanning.jpg" alt="Scanning poster with phones" width="250" style="border: 4px solid #206a62; vertical-align: middle;"/>
+  <img src="assets/demo/scanning.jpg" alt="Scanning poster with phones" width="250" style="border: 14px solid #206a62; vertical-align: middle;"/>
   &nbsp;&nbsp;&nbsp;
-  <img src="assets/demo/conference.jpg" alt="AR poster at conference" width="250" style="border: 4px solid #206a62; vertical-align: middle;"/>
+  <img src="assets/demo/conference.jpg" alt="AR poster at conference" width="250" style="border: 14px solid #206a62; vertical-align: middle;"/>
   &nbsp;&nbsp;&nbsp;
-  <img src="assets/demo/video.gif" alt="AR effect on poster" width="250" style="border: 4px solid #206a62; vertical-align: middle;"/>
+  <img src="assets/demo/video.gif" alt="AR effect on poster" width="250" style="border: 14px solid #206a62; vertical-align: middle;"/>
 </p>
 
 <p align="center">
