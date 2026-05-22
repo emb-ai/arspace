@@ -2,30 +2,30 @@ import * as THREE from "three";
 import { MindARThree } from "mindar-image-three";
 
 const CONFIG = {
-  defaultMindTarget: "./targets/targets.mind",
+  defaultMindTarget: "./assets/targets/targets.mind",
   planeWidth: 1, 
 };
 
 const TARGETS = [
-  { video: "./videos/food.mp4", image: "./videos/food.jpg" },
-  { video: "./videos/car.mp4", image: "./videos/car.jpg" },
-  { video: "./videos/coffee.mp4", image: "./videos/coffee.jpg" },
-  { video: "./videos/method.mp4", image: "./videos/method.jpg" },
+  { video: "./assets/media/food.mp4", image: "./assets/media/food.jpg" },
+  { video: "./assets/media/car.mp4", image: "./assets/media/car.jpg" },
+  { video: "./assets/media/coffee.mp4", image: "./assets/media/coffee.jpg" },
+  { video: "./assets/media/method.mp4", image: "./assets/media/method.jpg" },
 ];
 
 const ASSET_SIZES = {
   mindTarget: 2093780,
   videos: {
-    "./videos/food.mp4": 888026,
-    "./videos/car.mp4": 3636898,
-    "./videos/coffee.mp4": 1697141,
-    "./videos/method.mp4": 574733,
+    "./assets/media/food.mp4": 888026,
+    "./assets/media/car.mp4": 3636898,
+    "./assets/media/coffee.mp4": 1697141,
+    "./assets/media/method.mp4": 574733,
   },
   images: {
-    "./videos/food.jpg": 63977,
-    "./videos/car.jpg": 91818,
-    "./videos/coffee.jpg": 69281,
-    "./videos/method.jpg": 33895,
+    "./assets/media/food.jpg": 63977,
+    "./assets/media/car.jpg": 91818,
+    "./assets/media/coffee.jpg": 69281,
+    "./assets/media/method.jpg": 33895,
   },
 };
 
