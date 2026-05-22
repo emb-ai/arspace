@@ -19,10 +19,6 @@ __pycache__/
 venv/
 .env
 
-# Node (if using npm for local dev)
-node_modules/
-npm-debug.log*
-
 # Build outputs
 dist/
 build/

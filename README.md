@@ -1,13 +1,11 @@
 <p align="center">
-  <img src="assets/logo.png" alt="ARspace" width="400"/>
+  <img src="assets/logo.png" alt="arspace"/>
 </p>
 
-<h1 align="center">ARspace</h1>
+<h1 align="center">arspace</h1>
 
 <p align="center">
-  Turn static posters into interactive AR experiences with video overlays.
-  <br/>
-  No app download required — works directly in the browser.
+  Turn static posters into interactive AR experiences with video overlays. The project works directly in the browser.
 </p>
 
 <p align="center">
@@ -19,17 +17,8 @@
 
 ---
 
-## Why ARspace?
+Existing augmented reality (AR) solutions often require users to download special apps, which creates friction. This project runs entirely in the browser using WebAR technology, making it more easy to view your augmented posters by simply visiting a URL.
 
-Existing AR solutions often require users to download dedicated apps, which creates friction. ARspace runs entirely in the browser using WebAR technology, making it easy for anyone to view your augmented posters by simply visiting a URL.
-
-**Features:**
-- Browser-based AR (no app required)
-- Multiple target image support
-- Video overlay on detected images
-- Loading progress indicator
-- Mobile and desktop support
-- Works on Chrome 89+, Safari 16.4+, Firefox 108+
 
 ## Quick Start
 
@@ -38,19 +27,6 @@ Existing AR solutions often require users to download dedicated apps, which crea
    git clone https://github.com/your-username/arspace.git
    cd arspace
    ```
-
-2. **Start a local server**
-   ```bash
-   # Using Python
-   python3 -m http.server 8000
-   
-   # Or using Node.js
-   npx serve .
-   ```
-
-3. **Open in browser**
-   
-   Navigate to `http://localhost:8000` and point your camera at one of the target images.
 
 ## Project Structure
 
@@ -83,6 +59,7 @@ arspace/
 3. MindAR library scans the camera feed for target images
 4. When a target is detected, the corresponding video plays as an overlay
 
+
 ## Customization
 
 ### Adding Your Own Content
@@ -114,13 +91,6 @@ arspace/
    ];
    ```
 
-### Supported Formats
-
-| Type | Formats |
-|------|---------|
-| Videos | MP4 (H.264) |
-| Images | JPG, PNG, WebP |
-| Target Data | .mind (MindAR format) |
 
 ## Deployment
 
@@ -131,7 +101,7 @@ arspace/
 
 ### Static Hosting Options
 
-ARspace can be deployed to any static hosting service:
+arspace can be deployed to any static hosting service:
 
 - **GitHub Pages** — Free, easy setup with GitHub
 - **Netlify** — Free tier available, drag-and-drop deploy
@@ -150,27 +120,3 @@ your-domain.com/
 ```
 
 > 📖 **Russian hosting guide**: See [docs/hosting-regru.md](docs/hosting-regru.md) for detailed instructions on hosting with reg.ru.
-
-## Browser Support
-
-| Browser | Minimum Version |
-|---------|-----------------|
-| Chrome | 89+ |
-| Safari | 16.4+ |
-| Firefox | 108+ |
-| Edge | 89+ |
-
-## Dependencies
-
-- [Three.js](https://threejs.org/) v0.160.0 — 3D rendering
-- [MindAR](https://github.com/hiukim/mind-ar-js) v1.2.5 — Image tracking
-
-## License
-
-MIT License — see [LICENSE](LICENSE) for details.
-
----
-
-<p align="center">
-  Made with ❤️ for interactive experiences
-</p>
