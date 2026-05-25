@@ -31,9 +31,9 @@ The entire system runs in the browser using WebAR technology, so there is nothin
 Visitors scan the poster with their phone and see the projected video on the printout — no app install:
 
 <p align="center">
-  <img src="assets/demo/conference.png" alt="AR poster at conference" width="500"/>
+  <img src="assets/demo/conference.png" alt="AR poster at conference" width="550"/>
   &nbsp;&nbsp;&nbsp;
-  <img src="assets/demo/video.gif" alt="AR poster at conference" width="250"/>
+  <img src="assets/demo/video.gif" alt="AR poster at conference" width="280"/>
 </p>
 
 <p align="center">
