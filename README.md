@@ -7,17 +7,17 @@
 </p>
 
 <p align="center">
-  <a href="#what-is-it"> What is arspace? &nbsp; </a> •
-  <a href="#quick-start"> Quick Start &nbsp; </a> •
-  <a href="#customization"> Customization &nbsp; </a> •
-  <a href="#deployment"> Deployment </a>
+  <a href="#what-is">What is arspace?</a> &nbsp; • &nbsp;
+  <a href="#quick-start">Quick Start</a> &nbsp; • &nbsp;
+  <a href="#customization">Customization</a> &nbsp; • &nbsp;
+  <a href="#deployment">Deployment</a>
 </p>
 
 ---
 
 ## What is arspace?
 
-ARspace is a lightweight tool designed to help researchers present their work more effectively at poster sessions—without relying on tablets taped to posters or external devices. Instead, you can attach interactive, animated content directly to your poster images. Viewers simply **scan the poster with their phone** and instantly see videos or animations on top of the printed material.
+**arspace** is a lightweight tool designed to help researchers increase the visibility of their work at poster sessions—without relying on tablets taped to posters or external devices. Instead, you can attach interactive, animated content directly to your poster images. Viewers simply **scan the poster with their phone** and instantly see videos or animations on top of the printed material.
 
 The entire system runs in the browser using WebAR technology, so there is nothing to install—just open a link and start exploring:
 
