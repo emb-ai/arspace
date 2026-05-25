@@ -2,39 +2,19 @@ import * as THREE from "three";
 import { MindARThree } from "mindar-image-three";
 
 const CONFIG = {
-  defaultMindTarget: "./assets/targets/targets.mind",
+  manifestPath: "./assets/manifest.json",
   planeWidth: 1, 
 };
 
-const TARGETS = [
-  { video: "./assets/media/food.mp4", image: "./assets/media/food.jpg" },
-  { video: "./assets/media/car.mp4", image: "./assets/media/car.jpg" },
-  { video: "./assets/media/coffee.mp4", image: "./assets/media/coffee.jpg" },
-  { video: "./assets/media/method.mp4", image: "./assets/media/method.jpg" },
-];
-
-const ASSET_SIZES = {
-  mindTarget: 2093780,
-  videos: {
-    "./assets/media/food.mp4": 888026,
-    "./assets/media/car.mp4": 3636898,
-    "./assets/media/coffee.mp4": 1697141,
-    "./assets/media/method.mp4": 574733,
-  },
-  images: {
-    "./assets/media/food.jpg": 63977,
-    "./assets/media/car.jpg": 91818,
-    "./assets/media/coffee.jpg": 69281,
-    "./assets/media/method.jpg": 33895,
-  },
-};
+let manifest = null;
+let targets = [];
 
 const loadingState = {
   engine: { status: "loaded", label: "AR Engine Code", size: 2700000 },
   camera: { status: "pending", label: "Camera Access" },
-  mindTarget: { status: "pending", label: "AR Target Data", size: ASSET_SIZES.mindTarget },
-  videos: { status: "pending", label: "Videos", size: Object.values(ASSET_SIZES.videos).reduce((a, b) => a + b, 0) },
-  images: { status: "pending", label: "Reference Images", size: Object.values(ASSET_SIZES.images).reduce((a, b) => a + b, 0) },
+  mindTarget: { status: "pending", label: "AR Target Data", size: 0 },
+  videos: { status: "pending", label: "Videos", size: 0 },
+  images: { status: "pending", label: "Reference Images", size: 0 },
 };
 
 const isMobileDevice =
@@ -45,11 +25,34 @@ const MAX_PIXEL_RATIO = isMobileDevice ? 1.3 : window.devicePixelRatio;
 const ui = queryUI();
 attachInteractionHandlers(ui);
 updateLoadingUI(ui);
+initApp();
 
-if (isMobileDevice) {
-  showStatus(ui, "Tap to start the camera", { showButton: true, showProgress: true });
-} else {
-  startMindAR(ui);
+async function initApp() {
+  try {
+    manifest = await fetchManifest();
+    targets = manifest.targets;
+    
+    loadingState.mindTarget.size = manifest.mindTarget.size;
+    loadingState.videos.size = targets.reduce((sum, t) => sum + (t.videoSize || 0), 0);
+    loadingState.videos.label = `Videos`;
+    loadingState.images.size = targets.reduce((sum, t) => sum + (t.imageSize || 0), 0);
+    updateLoadingUI(ui);
+    
+    if (isMobileDevice) {
+      showStatus(ui, "Tap to start the camera", { showButton: true, showProgress: true });
+    } else {
+      startMindAR(ui);
+    }
+  } catch (err) {
+    console.error("Failed to load manifest:", err);
+    showStatus(ui, `<strong>Config Error:</strong> ${err.message}`, { showProgress: true });
+  }
+}
+
+async function fetchManifest() {
+  const res = await fetch(CONFIG.manifestPath);
+  if (!res.ok) throw new Error(`Failed to load ${CONFIG.manifestPath}`);
+  return res.json();
 }
 
 function queryUI() {
@@ -177,7 +180,7 @@ async function startMindAR(uiRefs) {
 
     const mindarThree = new MindARThree({
       container: uiRefs.arContainer,
-      imageTargetSrc: CONFIG.defaultMindTarget,
+      imageTargetSrc: manifest.mindTarget.path,
       uiScanning: false,
       uiLoading: false,
       uiError: false,
@@ -288,7 +291,7 @@ async function startMindAR(uiRefs) {
 }
 
 function createVideos() {
-  return TARGETS.map((target) => {
+  return targets.map((target) => {
     const video = document.createElement("video");
     video.classList.add("ar-video-source");
 
@@ -376,7 +379,7 @@ function waitForVideoReady(video) {
 
 async function loadTargetImages() {
   return Promise.all(
-    TARGETS.map(
+    targets.map(
       (target) =>
         new Promise((resolve) => {
           const img = new Image();
@@ -392,7 +395,7 @@ function createAnchors({ mindarThree, videos, targetImages }) {
   const anchors = [];
   const videoTextures = [];
 
-  for (let i = 0; i < TARGETS.length; i++) {
+  for (let i = 0; i < targets.length; i++) {
     const video = videos[i];
     const targetImg = targetImages[i];
     const aspectFromImage =
@@ -433,7 +436,7 @@ function createAnchors({ mindarThree, videos, targetImages }) {
 
     anchors.push(anchor);
     videoTextures.push(videoTexture);
-    console.log(`Anchor ${i} created for: ${TARGETS[i].video}`);
+    console.log(`Anchor ${i} created for: ${targets[i].video}`);
   }
 
   return { anchors, videoTextures };

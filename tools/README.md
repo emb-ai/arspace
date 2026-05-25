@@ -5,6 +5,9 @@
 From the project root:
 
 ```bash
+# Generate manifest.json (run after adding/changing media files)
+python3 tools/generate-manifest.py
+
 # Compress poster reference images (JPG/PNG/WebP)
 python3 tools/optimize-images.py ./assets/media --max-width 800 --quality 85
 
@@ -22,6 +25,19 @@ brew install ffmpeg   # macOS; or apt install ffmpeg on Linux
 ---
 
 ## Scripts
+
+### `generate-manifest.py`
+
+Scans `assets/media/` for video/image pairs and generates `assets/manifest.json` that `app.js` loads at startup. This eliminates the need to manually edit JavaScript when adding or removing targets.
+
+**Run after:**
+- Adding new video/image pairs to `assets/media/`
+- Replacing or optimizing existing files
+- Updating `assets/targets/targets.mind`
+
+The script matches videos (`.mp4`) with images (`.jpg`, `.png`, `.webp`) by filename — e.g., `poster.mp4` pairs with `poster.jpg`. Targets are listed in **alphabetical order by video filename** (same as sorting files in `assets/media/`).
+
+When you compile `assets/targets/targets.mind` in the [MindAR Compiler](https://hiukim.github.io/mind-ar-js-doc/tools/compile/), upload the matching reference images in that same alphabetical order so anchor index 0, 1, 2… matches the manifest.
 
 ### `optimize-images.py`
 
@@ -50,4 +66,8 @@ Re-encodes videos with H.264 (AAC audio) via **ffmpeg** to shrink MP4s used as A
 
 Supported inputs: `.mp4`, `.mov`, `.avi`, `.mkv`, `.webm`.
 
-After running either script, copy the optimized files into `assets/media/` (or replace originals) and update sizes in `js/app.js` if you track them in `ASSET_SIZES`.
+After running either script, copy the optimized files into `assets/media/` (or replace originals), then regenerate the manifest:
+
+```bash
+python3 tools/generate-manifest.py
+```

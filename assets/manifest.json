@@ -1,0 +1,32 @@
+{
+  "mindTarget": {
+    "path": "./assets/targets/targets.mind",
+    "size": 2093780
+  },
+  "targets": [
+    {
+      "video": "./assets/media/car.mp4",
+      "image": "./assets/media/car.jpg",
+      "videoSize": 291890,
+      "imageSize": 91818
+    },
+    {
+      "video": "./assets/media/coffee.mp4",
+      "image": "./assets/media/coffee.jpg",
+      "videoSize": 186508,
+      "imageSize": 69281
+    },
+    {
+      "video": "./assets/media/food.mp4",
+      "image": "./assets/media/food.jpg",
+      "videoSize": 109838,
+      "imageSize": 63977
+    },
+    {
+      "video": "./assets/media/method.mp4",
+      "image": "./assets/media/method.jpg",
+      "videoSize": 75087,
+      "imageSize": 33895
+    }
+  ]
+}

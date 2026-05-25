@@ -2,6 +2,8 @@
   <img src="assets/logo.png" alt="arspace"/>
 </p>
 
+# arspace: project to help researchers to add interactive visualizations on their posters with no extra difficulties
+
 <p align="center">
   Turn static posters into interactive AR experiences with video overlays. The project works directly in the browser.
 </p>
@@ -49,7 +51,6 @@ arspace/
 ├── js/
 │   └── app.js              # AR application logic
 ├── assets/
-│   ├── logo.png            # Project logo
 │   ├── demo/               # Demo images and video
 │   ├── targets/
 │   │   └── targets.mind    # Compiled AR target data
@@ -78,7 +79,8 @@ arspace/
 
 1. **Prepare your media**
    - Create videos for each target (MP4, reasonable size)
-   - Create reference images (JPG) — typically the first frame of each video
+   - Create reference images (JPG) — same filename as the video (e.g., `poster.mp4` + `poster.jpg`)
+   - Place both in `assets/media/`
 
 2. **Optimize files** (recommended for faster loading)
    ```bash
@@ -93,15 +95,16 @@ arspace/
    
    Use the [MindAR Compiler](https://hiukim.github.io/mind-ar-js-doc/tools/compile/) to generate a `.mind` file from your target images. Save it as `assets/targets/targets.mind`.
 
-4. **Update configuration**
+   **Important:** Upload the reference images to the compiler in **alphabetical order by filename**, the same order they appear in `assets/media/` (e.g. `car.jpg`, `coffee.jpg`, `food.jpg`, `method.jpg`). The manifest generator and the app use that order for anchor indices — if the compiler order does not match, scanning a poster will play the wrong video.
+
+4. **Generate manifest**
    
-   Edit `js/app.js` to point to your media files:
-   ```javascript
-   const TARGETS = [
-     { video: "./assets/media/your-video.mp4", image: "./assets/media/your-image.jpg" },
-     // Add more targets...
-   ];
+   Run the manifest generator to auto-detect all video/image pairs:
+   ```bash
+   python3 tools/generate-manifest.py
    ```
+   
+   This creates `assets/manifest.json` with all targets and file sizes — no need to edit JavaScript.
 
 
 ## Deployment
@@ -132,3 +135,7 @@ your-domain.com/
 ```
 
 > 📖 **Russian hosting guide**: See [docs/hosting-regru.md](docs/hosting-regru.md) for detailed instructions on hosting with reg.ru.
+
+
+## Acknowledgement
+MindAR
