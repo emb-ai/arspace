@@ -3,14 +3,14 @@
 </p>
 
 <p align="center">
-  Turn static posters into interactive AR experiences with video overlays. The project works directly in the browser.
+  <i>Turn static posters into interactive AR experiences with video overlays. The project works directly in the browser.</i>
 </p>
 
 <p align="center">
-  <a href="#what-is">What is arspace?</a> &nbsp; • &nbsp;
-  <a href="#quick-start">Quick Start</a> &nbsp; • &nbsp;
-  <a href="#customization">Customization</a> &nbsp; • &nbsp;
-  <a href="#deployment">Deployment</a>
+  <a href="#what-is-arspace">💡 What is arspace?</a> &nbsp; • &nbsp;
+  <a href="#quick-start">🚀 Quick Start</a> &nbsp; • &nbsp;
+  <a href="#customization">🛠️ Customization</a> &nbsp; • &nbsp;
+  <a href="#deployment">☁️ Deployment</a>
 </p>
 
 ---
@@ -73,14 +73,6 @@ arspace/
 └── docs/                   # Additional documentation
     └── hosting-regru.md    # Hosting guide (Russian)
 ```
-
-## How It Works
-
-1. User opens the website on their phone
-2. Camera permission is requested
-3. MindAR library scans the camera feed for target images
-4. When a target is detected, the corresponding video plays as an overlay
-
 
 ## Customization
 
