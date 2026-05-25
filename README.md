@@ -7,14 +7,19 @@
 </p>
 
 <p align="center">
-  <a href="#quick-start">Quick Start</a> •
-  <a href="#customization">Customization</a> •
-  <a href="#deployment">Deployment</a>
+  <a href="#what-is-it"> What is arspace? &nbsp; </a> •
+  <a href="#quick-start"> Quick Start &nbsp; </a> •
+  <a href="#customization"> Customization &nbsp; </a> •
+  <a href="#deployment"> Deployment </a>
 </p>
 
 ---
 
-Existing augmented reality (AR) solutions often require users to download special apps, which creates friction. This project runs entirely in the browser using WebAR technology, making it easy to view your augmented posters by simply visiting a URL.
+## What is arspace?
+
+ARspace is a lightweight tool designed to help researchers present their work more effectively at poster sessions—without relying on tablets taped to posters or external devices. Instead, you can attach interactive, animated content directly to your poster images. Viewers simply **scan the poster with their phone** and instantly see videos or animations on top of the printed material.
+
+The entire system runs in the browser using WebAR technology, so there is nothing to install—just open a link and start exploring:
 
 <p align="center">
   <img src="assets/scheme.png" alt="arspace"/>
