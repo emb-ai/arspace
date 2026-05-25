@@ -7,10 +7,10 @@
 </p>
 
 <p align="center">
-  <a href="#what-is-arspace">💡 What is arspace?</a> &nbsp; • &nbsp;
-  <a href="#quick-start">🚀 Quick Start</a> &nbsp; • &nbsp;
-  <a href="#customization">🛠️ Customization</a> &nbsp; • &nbsp;
-  <a href="#deployment">☁️ Deployment</a>
+  💡 <a href="#what-is-arspace">What is arspace?</a> &nbsp; • &nbsp;
+  🚀 <a href="#quick-start">Quick Start</a> &nbsp; • &nbsp;
+  🛠️ <a href="#customization">Customization</a> &nbsp; • &nbsp;
+  ☁️ <a href="#deployment">Deployment</a>
 </p>
 
 ---
