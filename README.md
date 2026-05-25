@@ -50,9 +50,8 @@ Visitors scan the poster with their phone and see the projected video on the pri
    ```
 
 
-2. **Deploy the website**
-
-Deploy `arspace` to your preferred hosting provider. Upload all files while maintaining the existing folder structure (see [docs/hosting-regru.md](docs/hosting-regru.md) for detailed instructions on hosting with popular platform "reg.ru"):
+2. **Deploy the website**.
+Deploy `arspace` to your preferred hosting provider. Upload all files while maintaining the existing folder structure:
 
 ```
 your-domain.com/
@@ -65,9 +64,12 @@ your-domain.com/
 > [!IMPORTANT]
 > To ensure mobile camera access works correctly: 1) use the `https://` prefix; 2) install a valid SSL certificate. Insecure websites will be blocked by phone security systems.
 
+> [!TIP]
+> See [docs/hosting-regru.md](docs/hosting-regru.md) for detailed instructions on hosting with popular platform "reg.ru"
 
-3. **Customize**
-Once the template works with the original media, replace the assets with your own content. Follow the step-by-step instructions in the [Customization](#customization) section.
+
+3. **Customize**.
+Once the template works with the original media, replace the assets with your own content. Follow the step-by-step instructions in the [customization](#customization) section.
 
 
 
