@@ -51,7 +51,7 @@ Visitors scan the poster with their phone and see the projected video on the pri
 
 
 2. **Deploy the website**.
-Deploy `arspace` to your preferred hosting provider. Upload all files while maintaining the existing folder structure:
+Deploy `arspace` to your preferred hosting provider. Upload all files while maintaining the existing folder structure (see [docs/hosting-regru.md](docs/hosting-regru.md) for detailed instructions on hosting with popular platform "reg.ru"):
 
 ```
 your-domain.com/
@@ -63,9 +63,6 @@ your-domain.com/
 
 > [!IMPORTANT]
 > To ensure mobile camera access works correctly: 1) use the `https://` prefix; 2) install a valid SSL certificate. Insecure websites will be blocked by phone security systems.
-
-> [!TIP]
-> See [docs/hosting-regru.md](docs/hosting-regru.md) for detailed instructions on hosting with popular platform "reg.ru"
 
 
 3. **Customize**.
@@ -91,15 +88,13 @@ Once the template works with the original media, replace the assets with your ow
    python3 tools/optimize-videos.py ./assets/media --crf 28 --max-width 720
    ```
 
-3. **Compile target images**
-   
+3. **Compile target images**.
    Use the [MindAR Compiler](https://hiukim.github.io/mind-ar-js-doc/tools/compile/) to generate a `.mind` file from your target images. Save it as `assets/targets/targets.mind`.
 
 > [!NOTE]
 > **Important:** Upload the reference images to the compiler in **alphabetical order by filename**, the same order they appear in `assets/media/` (e.g. `car.jpg`, `coffee.jpg`, `food.jpg`, `method.jpg`). The manifest generator and the app use that order for anchor indices — if the compiler order does not match, scanning a poster will play the wrong video.
 
-4. **Generate manifest**
-   
+4. **Generate manifest**.
    Run the manifest generator to auto-detect all video/image pairs:
    ```bash
    python3 tools/generate-manifest.py
