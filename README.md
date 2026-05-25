@@ -61,7 +61,7 @@ your-domain.com/
 └── assets/
 ```
 
-> [!IMPORTANT]
+> [!NOTE]
 > To ensure mobile camera access works correctly: 1) use the `https://` prefix; 2) install a valid SSL certificate. Insecure websites will be blocked by phone security systems.
 
 
