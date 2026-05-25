@@ -27,14 +27,39 @@
       <div id="statusOverlay" class="status show">
         <div class="status-content">
           <div class="loader" id="loader"></div>
-          <p id="statusText">Initializing...</p>
+          <p id="statusText">Downloading AR engine...</p>
           <button class="tap-start" id="tapStart" style="display:none;">START</button>
-          <div class="loading-progress" id="loadingProgress" style="display:none;">
+          <div class="loading-progress" id="loadingProgress">
             <h3>Loading Assets</h3>
-            <div id="loadingItems"></div>
+            <div id="loadingItems">
+              <div class="loading-item loading">
+                <span class="loading-icon loading">◌</span>
+                <span class="loading-label">AR Engine Code</span>
+                <span class="loading-size">~2.6 MB</span>
+              </div>
+              <div class="loading-item pending">
+                <span class="loading-icon pending">○</span>
+                <span class="loading-label">Camera Access</span>
+              </div>
+              <div class="loading-item pending">
+                <span class="loading-icon pending">○</span>
+                <span class="loading-label">AR Target Data</span>
+                <span class="loading-size">2.0 MB</span>
+              </div>
+              <div class="loading-item pending">
+                <span class="loading-icon pending">○</span>
+                <span class="loading-label">Videos (4)</span>
+                <span class="loading-size">6.5 MB</span>
+              </div>
+              <div class="loading-item pending">
+                <span class="loading-icon pending">○</span>
+                <span class="loading-label">Reference Images</span>
+                <span class="loading-size">252 KB</span>
+              </div>
+            </div>
             <div class="loading-total">
               <span class="loading-total-label">Progress</span>
-              <span class="loading-total-value" id="loadingPercent">0%</span>
+              <span class="loading-total-value" id="loadingPercent">0/5 (0%)</span>
             </div>
           </div>
         </div>

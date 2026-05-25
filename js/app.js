@@ -30,9 +30,10 @@ const ASSET_SIZES = {
 };
 
 const loadingState = {
+  engine: { status: "loaded", label: "AR Engine Code", size: 2700000 },
   camera: { status: "pending", label: "Camera Access" },
   mindTarget: { status: "pending", label: "AR Target Data", size: ASSET_SIZES.mindTarget },
-  videos: { status: "pending", label: "Videos (4)", size: Object.values(ASSET_SIZES.videos).reduce((a, b) => a + b, 0) },
+  videos: { status: "pending", label: "Videos", size: Object.values(ASSET_SIZES.videos).reduce((a, b) => a + b, 0) },
   images: { status: "pending", label: "Reference Images", size: Object.values(ASSET_SIZES.images).reduce((a, b) => a + b, 0) },
 };
 
@@ -43,9 +44,10 @@ const MAX_PIXEL_RATIO = isMobileDevice ? 1.3 : window.devicePixelRatio;
 
 const ui = queryUI();
 attachInteractionHandlers(ui);
+updateLoadingUI(ui);
 
 if (isMobileDevice) {
-  showStatus(ui, "Tap to start the camera", { showButton: true });
+  showStatus(ui, "Tap to start the camera", { showButton: true, showProgress: true });
 } else {
   startMindAR(ui);
 }
@@ -102,6 +104,7 @@ function setLoadingStatus(key, status) {
   if (loadingState[key]) {
     loadingState[key].status = status;
     updateLoadingUI(ui);
+    ui.statusOverlay.style.zIndex = "9999";
   }
 }
 
@@ -119,10 +122,20 @@ function showStatus(uiRefs, message, { showLoader = false, showButton = false, s
   uiRefs.loadingProgress.style.display = showProgress ? "block" : "none";
   uiRefs.statusText.innerHTML = message;
   uiRefs.statusOverlay.classList.add("show");
+  uiRefs.statusOverlay.style.zIndex = "9999";
   
   if (showProgress) {
     updateLoadingUI(uiRefs);
   }
+}
+
+function yieldToUI(ms = 0) {
+  const delay = isMobileDevice ? Math.max(ms, 80) : Math.max(ms, 16);
+  return new Promise(resolve => {
+    requestAnimationFrame(() => {
+      setTimeout(resolve, delay);
+    });
+  });
 }
 
 function hideStatus(uiRefs) {
@@ -132,9 +145,35 @@ function hideStatus(uiRefs) {
 async function startMindAR(uiRefs) {
   try {
     showStatus(uiRefs, "Loading assets...", { showLoader: true, showProgress: true });
-    
-    setLoadingStatus("camera", "loading");
+    await yieldToUI(120);
+
+    setLoadingStatus("images", "loading");
+    await yieldToUI();
+    const targetImagesPromise = loadTargetImages().then((images) => {
+      setLoadingStatus("images", "loaded");
+      return images;
+    }).catch(() => {
+      setLoadingStatus("images", "error");
+      return [];
+    });
+
+    setLoadingStatus("videos", "loading");
+    await yieldToUI();
+    const videos = createVideos();
+    const videosReadyPromise = prepareVideos(videos).then(() => {
+      setLoadingStatus("videos", "loaded");
+    }).catch(() => {
+      setLoadingStatus("videos", "error");
+    });
+
+    const targetImages = await targetImagesPromise;
+    await yieldToUI();
+    await videosReadyPromise;
+    await yieldToUI();
+
     setLoadingStatus("mindTarget", "loading");
+    showStatus(uiRefs, "Initializing AR engine...", { showLoader: true, showProgress: true });
+    await yieldToUI(120);
 
     const mindarThree = new MindARThree({
       container: uiRefs.arContainer,
@@ -153,31 +192,19 @@ async function startMindAR(uiRefs) {
 
     const { renderer, scene, camera } = mindarThree;
     renderer.setPixelRatio(Math.min(MAX_PIXEL_RATIO, window.devicePixelRatio));
-    
-    setLoadingStatus("videos", "loading");
-    const videos = createVideos();
-    
-    setLoadingStatus("images", "loading");
-    const videosReadyPromise = prepareVideos(videos).then(() => {
-      setLoadingStatus("videos", "loaded");
-    }).catch(() => {
-      setLoadingStatus("videos", "error");
-    });
-    
-    const targetImagesPromise = loadTargetImages().then((images) => {
-      setLoadingStatus("images", "loaded");
-      return images;
-    }).catch(() => {
-      setLoadingStatus("images", "error");
-      return [];
-    });
-    
+
+    setLoadingStatus("camera", "loading");
+    showStatus(uiRefs, "Requesting camera...", { showLoader: true, showProgress: true });
+    await yieldToUI(120);
+
     console.log("Starting MindAR...");
     await mindarThree.start();
+    await yieldToUI();
     setLoadingStatus("mindTarget", "loaded");
     console.log("MindAR started, camera active");
 
     showStatus(uiRefs, "Waiting for camera...", { showLoader: true, showProgress: true });
+    await yieldToUI();
 
     const startTime = Date.now();
     const checkInterval = 300;
@@ -210,8 +237,7 @@ async function startMindAR(uiRefs) {
     });
 
     showStatus(uiRefs, "Finalizing...", { showLoader: true, showProgress: true });
-    await videosReadyPromise;
-    const targetImages = await targetImagesPromise;
+    await yieldToUI();
     console.log("Videos and images loaded");
 
     const { anchors, videoTextures } = createAnchors({
@@ -460,7 +486,8 @@ function attachInteractionHandlers(uiRefs) {
 
   uiRefs.stage.addEventListener("click", tryPlayAllVideos);
 
-  uiRefs.tapStart.addEventListener("click", () => {
+  uiRefs.tapStart.addEventListener("click", (event) => {
+    event.stopPropagation();
     uiRefs.tapStart.style.display = "none";
     startMindAR(uiRefs);
   });

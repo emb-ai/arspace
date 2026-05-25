@@ -90,17 +90,16 @@ body {
   padding: 1rem;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 180ms ease;
-  z-index: 10;
+  visibility: hidden;
+  transition: opacity 180ms ease, visibility 0s 180ms;
+  z-index: 9999;
 }
 
 .status.show {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
-}
-
-.status:not(.show) {
-  display: none;
+  transition: opacity 180ms ease, visibility 0s 0s;
 }
 
 .status p {
