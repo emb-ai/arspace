@@ -46,40 +46,26 @@ Visitors scan the poster with their phone and see the projected video on the pri
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/arspace.git
+   git clone https://github.com/emb-ai/arspace.git
    cd arspace
    ```
 
-## Project Structure
+2. **Create a Website**
 
-```
-arspace/
-├── index.html              # Main entry point
-├── css/
-│   └── styles.css          # UI styles
-├── js/
-│   └── app.js              # AR application logic
-├── assets/
-│   ├── demo/               # Demo images and video
-│   ├── targets/
-│   │   └── targets.mind    # Compiled AR target data
-│   └── media/              # Videos and reference images
-│       ├── food.mp4        # Video content
-│       ├── food.jpg        # Target image reference
-│       └── ...
-├── tools/                  # Development utilities
-│   ├── optimize-images.py  # Image compression script
-│   └── optimize-videos.py  # Video compression script
-└── docs/                   # Additional documentation
-    └── hosting-regru.md    # Hosting guide (Russian)
-```
+
+3. **Customize**
+
+
+
+
+---
 
 ## 🛠️ Customization
 
 ### Adding Your Own Content
 
 1. **Prepare your media**
-   - Create videos for each target (MP4, reasonable size)
+   - Create videos for each target (MP4)
    - Create reference images (JPG) — same filename as the video (e.g., `poster.mp4` + `poster.jpg`)
    - Place both in `assets/media/`
 
@@ -96,7 +82,8 @@ arspace/
    
    Use the [MindAR Compiler](https://hiukim.github.io/mind-ar-js-doc/tools/compile/) to generate a `.mind` file from your target images. Save it as `assets/targets/targets.mind`.
 
-   **Important:** Upload the reference images to the compiler in **alphabetical order by filename**, the same order they appear in `assets/media/` (e.g. `car.jpg`, `coffee.jpg`, `food.jpg`, `method.jpg`). The manifest generator and the app use that order for anchor indices — if the compiler order does not match, scanning a poster will play the wrong video.
+> [!NOTE]
+> **Important:** Upload the reference images to the compiler in **alphabetical order by filename**, the same order they appear in `assets/media/` (e.g. `car.jpg`, `coffee.jpg`, `food.jpg`, `method.jpg`). The manifest generator and the app use that order for anchor indices — if the compiler order does not match, scanning a poster will play the wrong video.
 
 4. **Generate manifest**
    
@@ -138,5 +125,34 @@ your-domain.com/
 > 📖 **Russian hosting guide**: See [docs/hosting-regru.md](docs/hosting-regru.md) for detailed instructions on hosting with reg.ru.
 
 
+
+## Project Structure
+
+```
+arspace/
+├── index.html                # Main entry point
+├── css/
+│   └── styles.css            # UI styles
+├── js/
+│   └── app.js                # AR application logic
+├── assets/
+│   ├── demo/                 # Demo images and video
+│   ├── targets/
+│   │   └── targets.mind      # Compiled AR target data
+│   └── media/                # Videos and target images
+│       ├── food.mp4        
+│       ├── food.jpg        
+│       └── ...
+├── tools/                    # Development utilities
+│   ├── optimize-images.py    # Image compression script
+│   ├── optimize-videos.py    # Video compression script
+│   └── generate-manifest.py  # Scans `assets/media/` for video/image pairs
+└── docs/                     # Additional documentation
+    └── hosting-regru.md      # Hosting guide (Russian)
+```
+
+
+
 ## Acknowledgement
-MindAR
+We highly appreciate the creators of [MindAR](https://github.com/hiukim/mind-ar-js). Their project provides the core image recognition and keypoint compilation features for this work.
+
