@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png" alt="arspace"/>
+  <img src="assets/demo/logo.png" alt="arspace"/>
 </p>
 
 <p align="center">
@@ -21,7 +21,7 @@
 The entire system runs in the browser using WebAR technology, so there is nothing to install—just open a link and start exploring:
 
 <p align="center">
-  <img src="assets/scheme.png" alt="arspace"/>
+  <img src="assets/demo/scheme.png" alt="arspace"/>
 </p>
 
 
