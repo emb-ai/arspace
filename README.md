@@ -10,7 +10,6 @@
   💡 <a href="#what-is-arspace">What is arspace?</a> &nbsp; • &nbsp;
   🚀 <a href="#quick-start">Quick Start</a> &nbsp; • &nbsp;
   🛠️ <a href="#customization">Customization</a> &nbsp; • &nbsp;
-  ☁️ <a href="#deployment">Deployment</a>
 </p>
 
 ---
@@ -50,15 +49,27 @@ Visitors scan the poster with their phone and see the projected video on the pri
    cd arspace
    ```
 
-2. **Create a Website**
+
+2. **Deploy the website**
+
+Deploy `arspace` to your preferred hosting provider. Upload all files while maintaining the existing folder structure (see [docs/hosting-regru.md](docs/hosting-regru.md) for detailed instructions on hosting with popular platform "reg.ru"):
+
+```
+your-domain.com/
+├── index.html
+├── css/
+├── js/
+└── assets/
+```
+
+> [!IMPORTANT]
+> To ensure mobile camera access works correctly: 1) use the `https://` prefix; 2) install a valid SSL certificate. Insecure websites will be blocked by phone security systems.
 
 
 3. **Customize**
+Once the template works with the original media, replace the assets with your own content. Follow the step-by-step instructions in the [Customization](#customization) section.
 
 
-
-
----
 
 ## 🛠️ Customization
 
@@ -93,36 +104,6 @@ Visitors scan the poster with their phone and see the projected video on the pri
    ```
    
    This creates `assets/manifest.json` with all targets and file sizes — no need to edit JavaScript.
-
-
-## ☁️ Deployment
-
-### Requirements
-
-- HTTPS is **required** for camera access (except localhost)
-- SSL certificate must be valid
-
-### Static Hosting Options
-
-arspace can be deployed to any static hosting service:
-
-- **GitHub Pages** — Free, easy setup with GitHub
-- **Netlify** — Free tier available, drag-and-drop deploy
-- **Vercel** — Free tier, automatic deployments
-- **Any web hosting** — Upload files via FTP/SFTP
-
-### File Upload
-
-Upload all files maintaining the folder structure:
-```
-your-domain.com/
-├── index.html
-├── css/
-├── js/
-└── assets/
-```
-
-> 📖 **Russian hosting guide**: See [docs/hosting-regru.md](docs/hosting-regru.md) for detailed instructions on hosting with reg.ru.
 
 
 
