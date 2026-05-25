@@ -15,7 +15,7 @@
 
 ---
 
-## What is arspace?
+## 💡 What is arspace?
 
 **arspace** is a lightweight tool designed to help researchers increase the visibility of their work at poster sessions—without relying on tablets taped to posters or external devices. Instead, you can attach interactive, animated content directly to your poster images. Viewers simply **scan the poster with their phone** and instantly see videos or animations on top of the printed material.
 
@@ -42,7 +42,7 @@ Visitors scan the poster with their phone and see the projected video on the pri
 
 ---
 
-## Quick Start
+## 🚀 Quick Start
 
 1. **Clone the repository**
    ```bash
@@ -74,7 +74,7 @@ arspace/
     └── hosting-regru.md    # Hosting guide (Russian)
 ```
 
-## Customization
+## 🛠️ Customization
 
 ### Adding Your Own Content
 
@@ -108,7 +108,7 @@ arspace/
    This creates `assets/manifest.json` with all targets and file sizes — no need to edit JavaScript.
 
 
-## Deployment
+## ☁️ Deployment
 
 ### Requirements
 
