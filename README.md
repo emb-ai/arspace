@@ -16,6 +16,12 @@
 
 Existing augmented reality (AR) solutions often require users to download special apps, which creates friction. This project runs entirely in the browser using WebAR technology, making it easy to view your augmented posters by simply visiting a URL.
 
+<p align="center">
+  <img src="assets/scheme.png" alt="arspace"/>
+</p>
+
+
+---
 
 <p align="center">
   <img src="assets/demo/scanning.jpg" alt="Scanning poster with phones" width="250"/>
