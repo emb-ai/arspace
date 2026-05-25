@@ -2,8 +2,6 @@
   <img src="assets/logo.png" alt="arspace"/>
 </p>
 
-# arspace: project to help researchers to add interactive visualizations on their posters with no extra difficulties
-
 <p align="center">
   Turn static posters into interactive AR experiences with video overlays. The project works directly in the browser.
 </p>

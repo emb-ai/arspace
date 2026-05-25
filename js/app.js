@@ -184,11 +184,11 @@ async function startMindAR(uiRefs) {
       uiScanning: false,
       uiLoading: false,
       uiError: false,
-      filterMinCF: 0.0001,
-      filterBeta: 0.001,
+      filterMinCF: 0.0001,  // baseline smoothing
+      filterBeta: 10,       // fast motion response
       rendererSettings: {
         antialias: false,
-        powerPreference: "low-power",
+        powerPreference: "default",
         alpha: true,
       },
     });
