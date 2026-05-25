@@ -33,7 +33,7 @@ Visitors scan the poster with their phone and see the projected video on the pri
 <p align="center">
   <img src="assets/demo/conference.png" alt="AR poster at conference" width="520"/>
   &nbsp;&nbsp;&nbsp;
-  <img src="assets/demo/video.gif" alt="AR poster at conference" width="260"/>
+  <img src="assets/demo/video.gif" alt="AR poster at conference" width="270"/>
 </p>
 
 <p align="center">
