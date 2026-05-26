@@ -106,7 +106,8 @@ Once the template works with the original media, replace the assets with your ow
 
 ## Try arspace
 
-https://arspace.ru
+Experience how **arspace** works by visiting https://arspace.ru.  
+Once the website opens, click **“START”**, allow camera access, and scan one of the images below using your phone to see the AR content appear directly on the image.
 
 <p align="center">
   <img src="assets/demo/examples.png" alt="arspace"/>
