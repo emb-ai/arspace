@@ -1,6 +1,6 @@
 # Размещение на хостинге Рег.ру
 
-Данная инструкция описывает, как разместить ARspace на хостинге [рег.ру](https://www.reg.ru).
+Данная инструкция описывает, как разместить arspace на хостинге [рег.ру](https://www.reg.ru).
 
 Более подробную инструкцию можно найти на [официальном сайте](https://help.reg.ru/support/hosting/razmeshcheniye-sayta-otobrazheniye-v-brauzere/kak-razmestit-gotovyy-sayt-v-internete#1).
 
