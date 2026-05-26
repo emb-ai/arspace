@@ -10,6 +10,7 @@
   💡 <a href="#what-is-arspace">What is arspace?</a> &nbsp; • &nbsp;
   🚀 <a href="#quick-start">Quick Start</a> &nbsp; • &nbsp;
   🛠️ <a href="#customization">Customization</a>
+  🛠️ <a href="#customization">Try it</a> &nbsp; • &nbsp;
 </p>
 
 ---
@@ -102,6 +103,14 @@ Once the template works with the original media, replace the assets with your ow
    
    This creates `assets/manifest.json` with all targets and file sizes — no need to edit JavaScript.
 
+
+## Try arspace
+
+https://arspace.ru
+
+<p align="center">
+  <img src="assets/demo/examples.png" alt="arspace"/>
+</p>
 
 
 ## Project Structure
