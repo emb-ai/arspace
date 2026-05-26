@@ -10,7 +10,7 @@
   💡 <a href="#what-is-arspace">What is arspace?</a> &nbsp; • &nbsp;
   🚀 <a href="#quick-start">Quick Start</a> &nbsp; • &nbsp;
   🛠️ <a href="#customization">Customization</a> &nbsp; • &nbsp;
-  🔍 <a href="#try-it">Try it</a> 
+  🔍 <a href="#try-arspace">Try it</a> 
 </p>
 
 ---
