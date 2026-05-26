@@ -9,8 +9,8 @@
 <p align="center">
   💡 <a href="#what-is-arspace">What is arspace?</a> &nbsp; • &nbsp;
   🚀 <a href="#quick-start">Quick Start</a> &nbsp; • &nbsp;
-  🛠️ <a href="#customization">Customization</a>
-  🛠️ <a href="#customization">Try it</a> &nbsp; • &nbsp;
+  🛠️ <a href="#customization">Customization</a> &nbsp; • &nbsp;
+  🔍 <a href="#try-it">Try it</a> 
 </p>
 
 ---
