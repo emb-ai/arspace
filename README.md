@@ -110,11 +110,10 @@ Once the template works with the original media, replace the assets with your ow
 Visit https://arspace.ru (make sure to include the `https://` prefix). Once the website opens, click **“START”**, grant camera access, and scan one of the images below to see the AR content appear directly on the image.
 
 <p align="center">
-  <b>Example images that can be added to a poster and scanned with arspace</b>
-</p>
-
-<p align="center">
   <img src="assets/demo/examples.png" alt="Examples of scannable poster images for arspace"/>
+</p>
+<p align="center">
+  <b>Example images that can be added to a poster and scanned with arspace</b>
 </p>
 
 
