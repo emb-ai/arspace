@@ -52,7 +52,7 @@ Visitors scan the poster with their phone and see the projected video on the pri
 
 
 2. **Deploy the website**.
-Deploy `arspace` to your preferred hosting provider. Upload all files while maintaining the existing folder structure (see [docs/hosting-regru.md](docs/hosting-regru.md) for detailed instructions on hosting with popular platform "reg.ru"):
+Deploy `arspace` to your preferred hosting provider. Upload all files while maintaining the existing folder structure:
 
 ```
 your-domain.com/
@@ -62,8 +62,13 @@ your-domain.com/
 └── assets/
 ```
 
+The preferred option is **[GitHub Pages](https://pages.github.com/)**: it is free, serves the site over `https://` automatically, and needs no separate SSL setup. In the repository go to **Settings → Pages**, set Source to **Deploy from a branch**, choose branch `main` and folder `/ (root)`.  
+Live example: https://emb-ai.github.io/arspace/
+
+You can also host on a traditional platform such as [reg.ru](docs/hosting-regru.md).
+
 > [!NOTE]
-> To ensure mobile camera access works correctly: 1) use the `https://` prefix; 2) install a valid SSL certificate. Insecure websites will be blocked by phone security systems.
+> To ensure mobile camera access works correctly: 1) use the `https://` prefix; 2) install a valid SSL certificate (GitHub Pages already provides this). Insecure websites will be blocked by phone security systems.
 
 
 3. **Customize**.
